@@ -1,0 +1,3 @@
+Agregamos info al archivo 
+Adios
+Nueva Linea a contener informacion
