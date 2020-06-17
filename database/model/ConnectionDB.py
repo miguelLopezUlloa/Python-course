@@ -8,7 +8,7 @@ class ConnectionDB:
     __USERNAME = "postgres"
     __PASSWORD = "admin"
     __DBPORT = "5432"
-    __HOST = ""
+    __HOST = "192.168.1.69"
     __connection = None
     __cursor = None
 
@@ -54,9 +54,6 @@ class ConnectionDB:
             except Exception as e:
                 logger.error(f'Error al cerrar la conexion: { e }')
         logger.debug("Se han cerrado los objetos de conexion y cursor")
-
-
-
 
 if __name__ == '__main__':
     #logger.info(ConnectionDB.getConnection())

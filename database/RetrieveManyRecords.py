@@ -4,11 +4,11 @@ conexion = psycopg2.connect(user='postgres',
                             password='admin',
                             host='192.168.1.69',
                             port='5432',
-                            database='TestDb')
+                            database='TestDB')
 
 cursor = conexion.cursor()
 
-sentencia = 'SELECT * FROM persona WHERE id_persona IN %s'
+sentencia = 'SELECT * FROM persona WHERE idpersona IN %s'
 entrada = input("Proporciona las pk a buscar (separado por comas):")
 tupla = tuple(entrada.split(','))
 print(tupla)

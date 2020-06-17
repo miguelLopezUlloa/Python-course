@@ -4,7 +4,7 @@ conexion = psycopg2.connect(user='postgres',
                             password='admin',
                             host='192.168.1.69',
                             port='5432',
-                            database='TestDb')
+                            database='TestDB')
 try:
     # conexion.autocommit = True
 
@@ -18,7 +18,7 @@ try:
         ('Gaspar', 'Henaine', 'gasHenaine@mail.com'),
     )
 
-    sentenciaUpdate = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
+    sentenciaUpdate = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE idpersona=%s'
 
     # Se necesita crear una Tupla de Tuplas para contener varios registros
     valorUpdate = ('Jesus Nahum', 'Motolinia', 'jnmotolinia@mail.com', 5)

@@ -4,11 +4,11 @@ conexion = psycopg2.connect(user='postgres',
                             password='admin',
                             host='192.168.1.69',
                             port='5432',
-                            database='TestDb')
+                            database='TestDB')
 
 cursor = conexion.cursor()
 
-sentencia = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE id_persona=%s'
+sentencia = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE idpersona=%s'
 
 # Se necesita crear una Tupla de Tuplas para contener varios registros
 valores = ('Jesus Nahum', 'Motolinia', 'jnmotolinia@mail.com',5)
