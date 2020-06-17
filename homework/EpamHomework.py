@@ -81,8 +81,18 @@ class EpamHomework:
 
         print(store)
 
-        #for element in input_list:
-           # print("Elemento es:", element)
+    def remove_intersection(self, set1, set2):
+
+        finalSet = set1.difference(set2)
+
+        print(f"La interseccion resultante es: {finalSet}")
+
+
+    def delete_duplicates_to_tuple(self, input_list):
+
+        tmpSet = set(input_list)
+        finalTuple = tuple(tmpSet)
+        print("Other Tuple is:", finalTuple)
 
 
 
@@ -100,6 +110,7 @@ print("*" *60)
 
 #print(dir(list))
 
+"""
 list3 = [1, 2, 3, 4, 5]
 list4 = mixLists.move_element(list3, 2, 3)
 print(list4)
@@ -108,6 +119,18 @@ print("*" *60)
 
 food = ['spam', 'SPAM', 'spam', 'spam', 'bacon', 'SPAM']
 mixLists.count_elements(food)
+
+"""
+
+
+print("*" *60)
+
+mixLists.remove_intersection(set1={1, 2, 3, 4, 5}, set2={3, 4, 5, 6, 7})
+
+print("*" *60)
+mixLists.delete_duplicates_to_tuple(input_list=[2, 2, 3, 4, 5, 5, 5, 6, 7, 2])
+
+
 
 
 
