@@ -4,27 +4,34 @@ conexion = psycopg2.connect(user='postgres',
                             password='admin',
                             host='192.168.1.69',
                             port='5432',
-                            database='TestDb')
+                            database='TestDB')
+try:
+    # conexion.autocommit = True
 
-cursor = conexion.cursor()
+    cursor = conexion.cursor()
 
-sentencia = 'INSERT INTO persona(nombre, apellido, email) VALUES(%s, %s, %s)'
+    sentencia = 'INSERT INTO persona(nombre, apellido, email) VALUES(%s, %s, %s)'
 
-# Se necesita crear una Tupla de Tuplas para contener varios registros
-valores = (
-    ('Jesus', 'Motolinia', 'jmotolinia@mail.com'),
-    ('Martha','Sanchez','msanchez@mail.com'),
-    ('Pablo', 'Picasso', 'pabpicasso@mail.com')
-)
+    # Se necesita crear una Tupla de Tuplas para contener varios registros
+    valores = (
+        ('Ramiro', 'Gamboa', 'tioGamboin@mail.com'),
+        ('Gaspar', 'Henaine', 'gasHenaine@mail.com'),
+    )
 
-# Se usa executemany para insertar varios registros
-cursor.executemany(sentencia, valores)
+    sentenciaUpdate = 'UPDATE persona SET nombre=%s, apellido=%s, email=%s WHERE idpersona=%s'
 
-# Se guarda la información en la base de datos hasta que se de commit
-conexion.commit()
+    # Se necesita crear una Tupla de Tuplas para contener varios registros
+    valorUpdate = ('Jesus Nahum', 'Motolinia', 'jnmotolinia@mail.com', 5)
 
-registrosInsertados = cursor.rowcount
-print(f"Registros insertados: {registrosInsertados}")
+    # Se usa executemany para insertar varios registros
+    cursor.executemany(sentencia, valores)
 
-cursor.close()
-conexion.close()
+    # Se guarda la información en la base de datos hasta que se de commit
+    conexion.commit()
+
+except Exception as e:
+    conexion.rollback()
+    print("Ocurrio un error en la transaccion:", e)
+finally:
+    cursor.close()
+    conexion.close()

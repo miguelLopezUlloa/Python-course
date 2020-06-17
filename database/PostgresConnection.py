@@ -4,13 +4,13 @@ conexion = psycopg2.connect(user='postgres',
                             password='admin',
                             host='192.168.1.69',
                             port='5432',
-                            database='TestDb')
+                            database='TestDB')
 
 cursor = conexion.cursor()
 #sentencia = 'SELECT * FROM persona ORDER BY id_persona'
 #sentencia = 'SELECT * FROM persona WHERE id_persona=1 ORDER BY id_persona'
 # Esta ultima sentencia esta sustituyen el valor de id_persona, con el valor de una variable
-sentencia = 'SELECT * FROM persona WHERE id_persona=%s ORDER BY id_persona'
+sentencia = 'SELECT * FROM persona WHERE idpersona=%s ORDER BY idpersona'
 
 # Se tiene el id en la variable, y posteriomente se asigna a primaryKey
 # que contien una tupla. De esta manera python lo toma con la coma al final.
