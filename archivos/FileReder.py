@@ -85,11 +85,11 @@ read1 = FileReader()
 #read1.readLines()
 
 # Lee el archivo en un ciclo linea por linea
-#read1.readLoopLines()
+read1.readLoopLines()
 
 #read1.readAllLinesList()
 
-read1.copyFile()
+#read1.copyFile()
 
 
 
