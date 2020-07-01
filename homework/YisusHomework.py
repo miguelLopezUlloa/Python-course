@@ -1,4 +1,4 @@
-class EpamHomework:
+class YisusHomework:
 
     def __init__(self):
         print("Starting Python Epam Course - Homework...")
@@ -15,7 +15,7 @@ class EpamHomework:
         except:
             return input_list
 
-mixLists = EpamHomework()
+mixLists = YisusHomework()
 
 lst1 = [1,3, 5,7]
 lst2 = [8,2,7,4]

@@ -2,6 +2,7 @@ import os
 import glob
 import pathlib
 
+
 # ESTOS SON SOLO METEDOS PARA REFERENCIA Y MODOS DE
 # IMPLEMTACION DE ALGUNAS FUNCIONALIDADES
 def getFilesNames(self):
@@ -49,10 +50,23 @@ def seachFilesDirectory(self):
         for filename in glob.glob('*.py'):
             filesList.append(os.path.join(dirname, filename))
 
-            #for filename in filenames:
+            # for filename in filenames:
             #    filesList.append(os.path.join(dirname, filename))
 
-        #all_notebooks = [x for x in pathlib.Path('.').glob('**/*.ipynb')]
-        #print(all_notebooks)
-        #print(filesList)
+        # all_notebooks = [x for x in pathlib.Path('.').glob('**/*.ipynb')]
+        # print(all_notebooks)
+        # print(filesList)
     return filesList
+
+def countElements(self, input_list):
+    counterTokens = dict.fromkeys(self.tokenDict)
+
+    countKey = 0
+    # res = any(ele in input_list for ele in counterTokens.keys())
+    for keys, tokens in zip(counterTokens.keys(), input_list):
+        if self.verifyStart(tokens, keys) in tokens:
+            countKey += 1
+
+    counterTokens[keys] = countKey
+
+    return counterTokens
