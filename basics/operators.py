@@ -1,3 +1,4 @@
+import itertools
 
 # First operators
 
@@ -61,6 +62,16 @@ if xNum > 2 and xNum <= 20:
 y= 2
 if(not(xNum == y)): 
  print("Not equals than other")
+
+nume =  5//2
+
+print(nume)
+
+#print( [i for i in itertools.ifilter(lambda x: x% 5, itertools.islice(itertools.count(5), 10))] )
+# print(x)
+
+print("hello" 'world' * 2)
+
 
  
 
