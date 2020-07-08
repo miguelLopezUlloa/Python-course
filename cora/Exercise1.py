@@ -26,8 +26,6 @@ def  calcSuma(lst_numbers):
     sumaInicio = reduce(lambda x, y: x + y, lst_numbers)
     return sumaInicio
 
-    #total = reduce(lambda x: x:x+1 , lstSum )
-
 def searchSum(number):
     lstInNumbers= getListNumbers(number)
     sumIni = calcSuma(lstInNumbers)
@@ -47,10 +45,27 @@ def searchSum(number):
 
     return result
 
+def searchMissingNumber(lstNumbers):
+    missing = 0
 
+    if (lstNumbers[0] < 0):
+        missing = 1
+    else:
+       # missing = list(filter(lambda x,y:x <= y, setSorted) )
+       pattern = set(range(1, len(lstNumbers) + 1))
+       setSorted = set(lstNumbers)
+       #print(setSorted)
+       setMissing = pattern.difference(setSorted)
+       lstMissing = list(setMissing)
+       size = len(lstMissing)
 
+       if size >= 1:
+          missing = lstMissing[size-1]
+       else:
+           missing = max(lstNumbers) + 1
+           #missing = lstNumbers[len(lstNumbers)-1] + 1
 
-
+    return missing
 
 #solution(A=[1,3,6,4,1,2])
 #soluDos(1990)
@@ -60,6 +75,9 @@ def searchSum(number):
 
 print(searchSum(1990))
 
+print(searchMissingNumber(lstNumbers=[1, 3, 6, 4, 1, 2]))
+print(searchMissingNumber(lstNumbers=[1,2,3]))
+print(searchMissingNumber(lstNumbers=[-1, -2, -3]))
 
 
 
