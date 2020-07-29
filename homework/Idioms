@@ -1,0 +1,104 @@
+class Idioms:
+
+    def __init__(self):
+        print("Starting")
+
+    def listClassicForm(self):
+        squared_list = []
+
+        for x in range(10):
+            if x % 2 == 0:
+                squared_list.append(x ** 2)
+
+        return squared_list
+
+    def createListCompress(self):
+        squared_list = [x ** 2 for x in range(10) if x % 2 == 0]
+
+        return squared_list
+
+    def dictClassicForm(self):
+        squared_dict= dict()
+
+        for x in range(10):
+            if x % 2 == 1:
+                squared_dict[x] = x ** 2
+
+        return squared_dict
+
+
+    def createDictCompress(self):
+        sequence = range(10)
+        squared_dict = {x: x ** 2 for x in range(10) if x % 2 == 1}
+
+        return squared_dict
+
+    def createSetClassic(self):
+        numbers_set = set()
+
+        for character in "JWxdVL8hE8VRmU8vCUX8Y32tFmgn7hfm":
+            if character.isdigit():
+                numbers_set.add(int(character))
+
+        return numbers_set
+
+    def createSetCompress(self):
+        strList = "JWxdVL8hE8VRmU8vCUX8Y32tFmgn7hfm"
+        #number_set = { int(chr) for chr in strList if chr.isdigit() }
+        number_set = {int(chr) for chr in "JWxdVL8hE8VRmU8vCUX8Y32tFmgn7hfm" if chr.isdigit()}
+
+        return number_set
+
+    def swapDictElements(self):
+        numbers = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
+
+        switched_numbers = { v:k for (k,v) in numbers.items() }
+
+        return switched_numbers
+
+    def my_generator(self, num):
+
+        for i in range(num,(num+num)+1):
+            if i % 2 == 0:
+                #print(i)
+                yield i
+
+    def lambdaSorted(self):
+        my_list = ["cat", "dog", "bird", "alligator"]
+
+        # Sorted with natural order
+        #sortedList = sorted(my_list)
+
+        #sorted with an specific criteria
+        sortedList = sorted(my_list, key= lambda item: item[-1])
+
+        return sortedList
+
+idi = Idioms()
+
+print(idi.listClassicForm())
+print(idi.createListCompress())
+
+print("*" *60)
+
+print(idi.dictClassicForm())
+print(idi.createDictCompress())
+
+print("*" *60)
+
+print(idi.createSetClassic())
+print(idi.createSetCompress())
+
+print("*" *60)
+
+print(idi.swapDictElements())
+
+print("*" *60)
+
+my_gen = idi.my_generator(10)
+
+print(next(my_gen))
+print(next(my_gen))
+
+print(idi.lambdaSorted())
+

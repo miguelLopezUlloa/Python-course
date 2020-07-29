@@ -45,9 +45,12 @@ class ShortIdioms:
 
        print(tblMulti)
 
+
+
 short1 = ShortIdioms()
 
 short1.shortList()
 short1.shortListV2()
 short1.shortCompressForms()
 short1.multiplyTable()
+
