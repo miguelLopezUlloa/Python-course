@@ -45,6 +45,13 @@ class ShortIdioms:
 
        print(tblMulti)
 
+    def swapNumbers(self):
+        numbers = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five'}
+
+        switched_numbers = {v: k for (k, v) in numbers.items()}
+
+        print(switched_numbers)
+
 
 
 short1 = ShortIdioms()
@@ -53,4 +60,6 @@ short1.shortList()
 short1.shortListV2()
 short1.shortCompressForms()
 short1.multiplyTable()
+
+short1.swapNumbers()
 
