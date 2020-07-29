@@ -34,5 +34,8 @@ def coinsChanges(coin_list):
             index += 1
     return changes
 
+lstCoins = [0,1,1,0]
+coins(lstCoins)
+
 
 
